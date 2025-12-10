@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meeting Reminder Popup</title>
+  <style>
+    body {
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1470&q=80');
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+    
+    body::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.4);
+      z-index: 0;
+    }
+
+    /* Open Popup Button */
+    .btn-open {
+      position: relative;
+      z-index: 1;
+      padding: 14px 28px;
+      font-size: 17px;
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin: 40px;
+      box-shadow: 0 4px 8px rgba(0,123,255,0.4);
+      transition: background-color 0.25s ease;
+    }
+    .btn-open:hover {
+      background-color: #0056b3;
+      box-shadow: 0 6px 12px rgba(0,86,179,0.6);
+    }
+
+    /* Popup container */
+    .popup {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 380px;
+      background-color: #fff;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      padding: 30px 35px;
+      transform: translate(-50%, -50%);
+      display: none;
+      z-index: 2;
+    }
+
+    /* Show popup */
+    .popup:target {
+      display: block;
+    }
+
+    /* Popup header */
+    .popup h3 {
+      margin: 0 0 15px 0;
+      font-weight: 700;
+      color: #007bff;
+      font-size: 24px;
+      border-bottom: 2px solid #007bff;
+      padding-bottom: 8px;
+    }
+
+    /* Popup message */
+    .popup p {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 25px;
+      line-height: 1.5;
+    }
+
+    /* Actions */
+    .popup .actions {
+      text-align: right;
+    }
+
+    .btn-close,
+    .btn-snooze {
+      padding: 10px 18px;
+      font-size: 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-left: 10px;
+      display: inline-block;
+    }
+
+    .btn-close {
+      background-color: #6c757d;
+      color: white;
+      box-shadow: 0 3px 6px rgba(108,117,125,0.5);
+    }
+    .btn-close:hover {
+      background-color: #5a6268;
+    }
+
+    .btn-snooze {
+      background-color: #007bff;
+      color: white;
+      box-shadow: 0 4px 8px rgba(0,123,255,0.5);
+    }
+    .btn-snooze:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Open Popup Button -->
+  <a href="#meetingPopup" class="btn-open">Show Meeting Reminder</a>
+
+  <!-- Popup -->
+  <div class="popup" id="meetingPopup">
+    <h3>Upcoming Meeting</h3>
+    <p>Your meeting with the Marketing team is scheduled for <strong>Tomorrow at 3:00 PM</strong>. Please be prepared with your presentation slides.</p>
+    <div class="actions">
+      <a href="#" class="btn-snooze">Snooze 10 min</a>
+      <a href="#" class="btn-close">Dismiss</a>
+    </div>
+  </div>
+
+</body>
+</html>
+
+
+

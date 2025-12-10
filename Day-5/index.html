@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Payment Process notification</title>
+  <style>
+
+    /* Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #1e1e2f; /* Dark background */
+      color: #f1f1f1;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    /* Header */
+    header {
+      background-color: #2b2b45;
+      padding: 20px;
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+    }
+
+    /* Main */
+    main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    h1 {
+      color: #ffd369;
+      margin-bottom: 10px;
+    }
+
+    p.description {
+      max-width: 600px;
+      text-align: center;
+      margin-bottom: 40px;
+      font-size: 18px;
+      color: #ccc;
+    }
+
+    /* Alerts */
+    .alert-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 30px;
+    }
+
+    .alert {
+      width: 300px;
+      padding: 15px 20px;
+      border-radius: 10px;
+      border: 1px solid #444;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .success {
+      background-color: #d4fcd4;
+      color: #066006;
+    }
+
+    .error {
+      background-color: #fbd6d6;
+      color: #a10000;
+    }
+
+    /* Button */
+    .pay-btn {
+      background-color: #00adb5;
+      padding: 12px 30px;
+      border: none;
+      border-radius: 10px;
+      font-size: 16px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .pay-btn:hover {
+      background-color: #0097a0;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #2b2b45;
+      text-align: center;
+      padding: 15px;
+      font-size: 14px;
+      color: #999;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    Software Development Academy
+  </header>
+
+  <main>
+    <h1>Complete Your Course Payment</h1>
+    <p class="description">
+      You're just one step away from unlocking the full course: <strong>"FullStack Web Development"</strong>.
+      Click the button below to process your payment securely.
+    </p>
+
+    <div class="alert-box">
+      <div class="alert error">❌ Payment Failed! Please try again.</div>
+      <div class="alert success">✅ Payment Success! Welcome aboard.</div>
+    </div>
+
+    <button class="pay-btn">Pay Now</button>
+  </main>
+
+  <footer>
+    &copy; 2025 Software Academy. All rights reserved.
+  </footer>
+
+</body>
+</html>
+

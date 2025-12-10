@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Job Application Form</title>
+  <style>
+    body {
+      font-family: "Georgia", serif;
+      background-color: #dcebf7;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Fixed Header */
+    .header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background-color: #d97427;
+      color: white;
+      text-align: center;
+      padding: 25px 0;
+      font-size: 28px;
+      font-weight: bold;
+      font-style: italic;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+      z-index: 1000;
+      user-select: none;
+    }
+
+    .container {
+      margin: 140px auto 50px;
+      width: 90%;
+      max-width: 600px;
+      background: white;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      margin-top: 20px;
+      margin-bottom: 6px;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="date"],
+    input[type="time"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      box-sizing: border-box;
+      font-family: "Georgia", serif;
+    }
+
+    .required {
+      color: red;
+      margin-left: 4px;
+    }
+
+    button.submit-btn {
+      margin-top: 25px;
+      background-color: #d97427;
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+      padding: 12px 0;
+      width: 100%;
+      border: none;
+      border-radius: 7px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button.submit-btn:hover {
+      background-color: #bb621d;
+    }
+
+    /*v note email */
+    .note {
+      font-size: 12px;
+      color: #777;
+      margin-top: 4px;
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    Job Application Form
+  </div>
+
+  <div class="container">
+    <form>
+      <label for="fullName">Full Name <span class="required">*</span></label>
+      <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required />
+
+      <label for="email">Email <span class="required">*</span></label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required />
+      <div class="note">We'll send your interview details here</div>
+
+      <label for="phone">Phone Number <span class="required">*</span></label>
+      <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required />
+
+      <label for="interviewDate">Interview Date <span class="required">*</span></label>
+      <input type="date" id="interviewDate" name="interviewDate" required />
+
+      <label for="interviewTime">Interview Time <span class="required">*</span></label>
+      <input type="time" id="interviewTime" name="interviewTime" required />
+
+      <label for="position">Position Applied For <span class="required">*</span></label>
+      <input type="text" id="position" name="position" placeholder="e.g., Software Engineer" required />
+
+      <label for="comments">Additional Comments</label>
+      <textarea id="comments" name="comments" rows="4" placeholder="Any additional information or questions"></textarea>
+
+      <button type="submit" class="submit-btn">Submit</button>
+    </form>
+  </div>
+
+</body>
+</html>

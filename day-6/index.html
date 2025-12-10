@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Airbnb Hotel Cards </title>
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+  <style>
+  
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #f8f9fa;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    /*HEADER*/
+    header {
+      background-color: #fff;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+      padding: 14px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo {
+      font-weight: 700;
+      color: #ff385c;
+      font-size: 1.4rem;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav a {
+      color: #333;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+
+    nav a:hover {
+      color: #ff385c;
+    }
+
+    .search-bar {
+      display: flex;
+      align-items: center;
+      background-color: #f1f1f1;
+      border-radius: 30px;
+      padding: 6px 12px;
+      gap: 6px;
+    }
+
+    .search-bar input {
+      border: none;
+      outline: none;
+      background: none;
+      font-size: 0.95rem;
+      width: 150px;
+    }
+
+    .search-bar i {
+      color: #ff385c;
+      font-size: 1.1rem;
+    }
+
+    /* CARD GRID*/
+    .main-content {
+      padding: 50px 40px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 24px;
+      justify-items: center;
+    }
+
+    .airbnb-card {
+      border: 1px solid #ddd;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+      transition: box-shadow 0.3s ease;
+      background: #fff;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .airbnb-card:hover {
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .airbnb-image {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+
+    .airbnb-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .wishlist-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #ffffffcc;
+      border: none;
+      border-radius: 50%;
+      padding: 6px 8px;
+      cursor: pointer;
+    }
+
+    .airbnb-body {
+      padding: 12px 16px 16px;
+    }
+
+    .airbnb-title {
+      font-weight: 600;
+      font-size: 1rem;
+      margin-bottom: 4px;
+    }
+
+    .airbnb-location,
+    .airbnb-date {
+      font-size: 0.875rem;
+      color: #717171;
+      margin-bottom: 2px;
+    }
+
+    .airbnb-price {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #333;
+      margin-top: 4px;
+    }
+
+    .airbnb-rating i {
+      color: #ff385c;
+    }
+
+    .visit-btn {
+      display: inline-block;
+      margin-top: 10px;
+      color: white;
+      background-color: #ff385c;
+      border: none;
+      border-radius: 6px;
+      padding: 6px 12px;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: background-color 0.2s;
+    }
+
+    .visit-btn:hover {
+      background-color: #e03050;
+    }
+    @media (max-width: 768px) {
+      nav ul {
+        display: none;
+      }
+      .search-bar input {
+        width: 100px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    
+
+    <div class="logo"><i class="fa-brands fa-airbnb"></i>
+ airbnb</div>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="search-bar">
+      <i class="bi bi-search"></i>
+      <input type="text" placeholder="Search stays..." />
+    </div>
+  </header>
+
+  <!--  MAIN CONTENT -->
+  <section class="main-content">
+    <h2 style="text-align:center; margin-bottom:30px;">Explore Top Stays</h2>
+
+    <div class="card-grid">
+      <!-- Repeatable 8 cards -->
+      <div class="airbnb-card">
+        <div class="airbnb-image">
+          <img src="images/img1.jpeg" alt="Paris Apartment" />
+          <button class="wishlist-btn"><i class="bi bi-heart"></i></button>
+        </div>
+        <div class="airbnb-body">
+          <div class="airbnb-title">Eiffel Tower Apartment</div>
+          <div class="airbnb-rating"><i class="bi bi-star-fill"></i> 4.9</div>
+          <div class="airbnb-location"><i class="bi bi-geo-alt-fill text-danger"></i> Paris, France</div>
+          <div class="airbnb-date"><i class="bi bi-calendar-event"></i> Nov 3–5</div>
+          <div class="airbnb-price"><i class="bi bi-currency-rupee text-success"></i>16,500</div>
+          <a href="https://www.airbnb.com/rooms/1" target="_blank" class="visit-btn">Visit</a>
+        </div>
+      </div>
+
+      
+      <div class="airbnb-card">
+        <div class="airbnb-image"><img src="https://images.unsplash.com/photo-1560347876-aeef00ee58a1" />
+        <button class="wishlist-btn"><i class="bi bi-heart"></i></button></div>
+        <div class="airbnb-body">
+          <div class="airbnb-title">Bali Private Villa</div>
+          <div class="airbnb-rating"><i class="bi bi-star-fill"></i> 4.8</div>
+          <div class="airbnb-location"><i class="bi bi-geo-alt-fill text-danger"></i> Ubud, Bali</div>
+          <div class="airbnb-date"><i class="bi bi-calendar-event"></i> Dec 10–13</div>
+          <div class="airbnb-price"><i class="bi bi-currency-rupee text-success"></i>45,000</div>
+          <a href="https://www.airbnb.com/rooms/2" target="_blank" class="visit-btn">Visit</a>
+        </div>
+      </div>
+
+      <div class="airbnb-card">
+        <div class="airbnb-image"><img src="images/img2.jpeg" />
+        <button class="wishlist-btn"><i class="bi bi-heart"></i></button></div>
+        <div class="airbnb-body">
+          <div class="airbnb-title">Manhattan Loft</div>
+          <div class="airbnb-rating"><i class="bi bi-star-fill"></i> 4.92</div>
+          <div class="airbnb-location"><i class="bi bi-geo-alt-fill text-danger"></i> New York</div>
+          <div class="airbnb-date"><i class="bi bi-calendar-event"></i> Nov 20–23</div>
+          <div class="airbnb-price"><i class="bi bi-currency-rupee text-success"></i>82,000</div>
+          <a href="https://www.airbnb.com/rooms/3" target="_blank" class="visit-btn">Visit</a>
+        </div>
+      </div>
+
+      <div class="airbnb-card">
+        <div class="airbnb-image"><img src="images/img3.jpeg" />
+        <button class="wishlist-btn"><i class="bi bi-heart"></i></button></div>
+        <div class="airbnb-body">
+          <div class="airbnb-title">Santorini Sea View</div>
+          <div class="airbnb-rating"><i class="bi bi-star-fill"></i> 5.0</div>
+          <div class="airbnb-location"><i class="bi bi-geo-alt-fill text-danger"></i> Santorini, Greece</div>
+          <div class="airbnb-date"><i class="bi bi-calendar-event"></i> May 1–4</div>
+          <div class="airbnb-price"><i class="bi bi-currency-rupee text-success"></i>50,000</div>
+          <a href="https://www.airbnb.com/rooms/4" target="_blank" class="visit-btn">Visit</a>
+        </div>
+      </div>
+
+      <div class="airbnb-card">
+        <div class="airbnb-image"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267" />
+        <button class="wishlist-btn"><i class="bi bi-heart"></i></button></div>
+        <div class="airbnb-body">
+          <div class="airbnb-title">Tokyo Capsule Stay</div>
+          <div class="airbnb-rating"><i class="bi bi-star-fill"></i> 4.7</div>
+          <div class="airbnb-location"><i class="bi bi-geo-alt-fill text-danger"></i> Tokyo, Japan</div>
+          <div class="airbnb-date"><i class="bi bi-calendar-event"></i> Feb 8–10</div>
+          <div class="airbnb-price"><i class="bi bi-currency-rupee text-success"></i>12,000</div>
+          <a href="https://www.airbnb.com/rooms/5" target="_blank" class="visit-btn">Visit</a>
+        </div>
+      </div>
+
+      <div class="airbnb-card">
+        <div class="airbnb-image"><img src="images/img4.jpeg" />
+        <button class="wishlist-btn"><i class="bi bi-heart"></i></button></div>
+        <div class="airbnb-body">
+          <div class="airbnb-title">Dubai Luxury Suite</div>
+          <div class="airbnb-rating"><i class="bi bi-star-fill"></i> 4.95</div>
+          <div class="airbnb-location"><i class="bi bi-geo-alt-fill text-danger"></i> Dubai, UAE</div>
+          <div class="airbnb-date"><i class="bi bi-calendar-event"></i> Mar 15–18</div>
+          <div class="airbnb-price"><i class="bi bi-currency-rupee text-success"></i>1,20,000</div>
+          <a href="https://www.airbnb.com/rooms/6" target="_blank" class="visit-btn">Visit</a>
+        </div>
+      </div>
+
+      <div class="airbnb-card">
+        <div class="airbnb-image"><img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb" />
+        <button class="wishlist-btn"><i class="bi bi-heart"></i></button></div>
+        <div class="airbnb-body">
+          <div class="airbnb-title">Swiss Alps Cabin</div>
+          <div class="airbnb-rating"><i class="bi bi-star-fill"></i> 4.84</div>
+          <div class="airbnb-location"><i class="bi bi-geo-alt-fill text-danger"></i> Zermatt, Switzerland</div>
+          <div class="airbnb-date"><i class="bi bi-calendar-event"></i> Jan 10–14</div>
+          <div class="airbnb-price"><i class="bi bi-currency-rupee text-success"></i>90,000</div>
+          <a href="https://www.airbnb.com/rooms/7" target="_blank" class="visit-btn">Visit</a>
+        </div>
+      </div>
+
+      <div class="airbnb-card">
+        <div class="airbnb-image"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c" />
+        <button class="wishlist-btn"><i class="bi bi-heart"></i></button></div>
+        <div class="airbnb-body">
+          <div class="airbnb-title">Sydney Harbour View</div>
+          <div class="airbnb-rating"><i class="bi bi-star-fill"></i> 4.91</div>
+          <div class="airbnb-location"><i class="bi bi-geo-alt-fill text-danger"></i> Sydney, Australia</div>
+          <div class="airbnb-date"><i class="bi bi-calendar-event"></i> Apr 5–9</div>
+          <div class="airbnb-price"><i class="bi bi-currency-rupee text-success"></i>70,000</div>
+          <a href="https://www.airbnb.com/rooms/8" target="_blank" class="visit-btn">Visit</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</body>
+</html>
+
+
+
+
+

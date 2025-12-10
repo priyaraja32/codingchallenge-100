@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Restaurant</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+
+<!--REGISTER CARD-->
+<div id="registerCard" class="card">
+    <h2>Register</h2>
+    <input type="text" id="regName" placeholder="Name" onkeyup="checkRegName()">
+    <div id="regNameError" class="error"></div>
+
+    <input type="text" id="regEmail" placeholder="Email" onkeyup="checkRegEmail()">
+    <div id="regEmailError" class="error"></div>
+
+    <div class="input-group">
+        <input type="password" id="regPass" placeholder="Password" onkeyup="checkRegPass()">
+        <span class="toggle-password" onclick="togglePassword('regPass', this)"></span>
+    </div>
+    <div id="regPassError" class="error"></div>
+
+    <button onclick="register()">Register</button>
+    <p>Already have an account? <span class="link" onclick="showLogin()">Login</span></p>
+</div>
+
+<!-- LOGIN CARD -->
+<div id="loginCard" class="card" style="display:none;">
+    <h2>Login</h2>
+    <input type="text" id="loginEmail" placeholder="Email" onkeyup="checkLoginEmail()">
+    <div id="loginEmailError" class="error"></div>
+
+    <div class="input-group">
+        <input type="password" id="loginPass" placeholder="Password" onkeyup="checkLoginPass()">
+        <span class="toggle-password" onclick="togglePassword('loginPass', this)"></span>
+    </div>
+    <div id="loginPassError" class="error"></div>
+
+    <button onclick="login()">Login</button>
+    <p>Don't have an account? <span class="link" onclick="showRegister()">Register</span></p>
+</div>
+
+<!-- MENU SECTION  -->
+<div id="menuSection" style="display:none;">
+    <h2>Welcome, <span id="userName"></span> 🍽️</h2>
+
+    <h3>Veg Items</h3>
+    <div class="menu-section" id="vegMenu">
+        <div class="food-card">
+            <img src="images/veg.jpeg" alt="Veg Biryani">
+            <h4>Veg Biryani</h4>
+            <div class="btn-group">
+                <button class="likeBtn" onclick="likeFood(this,'veg1')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> </button>
+                <button class="orderBtn" onclick="orderFood('Veg Biryani')"> <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></button>
+            </div>
+            <p>Likes: <span id="veg1">0</span></p>
+        </div>
+        <div class="food-card">
+            <img src="images/panner.jpeg" alt="Paneer Tikka">
+            <h4>Paneer Tikka</h4>
+            <div class="btn-group">
+                <button class="likeBtn" onclick="likeFood(this,'veg2')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> </button>
+                <button class="orderBtn" onclick="orderFood('Paneer Tikka')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></button>
+            </div>
+            <p>Likes: <span id="veg2">0</span></p>
+        </div>
+        <div class="food-card">
+            <img src="images/vegsalad.jpeg" alt="Veg Salad">
+            <h4>Veg Salad</h4>
+            <div class="btn-group">
+                <button class="likeBtn" onclick="likeFood(this,'veg3')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> </button>
+                <button class="orderBtn" onclick="orderFood('Veg Salad')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></button>
+            </div>
+            <p>Likes: <span id="veg3">0</span></p>
+        </div>
+        <div class="food-card">
+            <img src="images/mixedveg.jpeg" alt="Mixed Veg Curry">
+            <h4>Mixed Veg Curry</h4>
+            <div class="btn-group">
+                <button class="likeBtn" onclick="likeFood(this,'veg4')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> </button>
+                <button class="orderBtn" onclick="orderFood('Mixed Veg Curry')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></button>
+            </div>
+            <p>Likes: <span id="veg4">0</span></p>
+        </div>
+    </div>
+
+    <h3>Non-Veg Items</h3>
+    <div class="menu-section" id="nonVegMenu">
+        <div class="food-card">
+            <img src="images/chickenbri.jpeg" alt="Chicken Biryani">
+            <h4>Chicken Biryani</h4>
+            <div class="btn-group">
+                <button class="likeBtn" onclick="likeFood(this,'non1')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> </button>
+                <button class="orderBtn" onclick="orderFood('Chicken Biryani')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></button>
+            </div>
+            <p>Likes: <span id="non1">0</span></p>
+        </div>
+        <div class="food-card">
+            <img src="images/fishfry.jpeg" alt="Fish Fry">
+            <h4>Fish Fry</h4>
+            <div class="btn-group">
+                <button class="likeBtn" onclick="likeFood(this,'non2')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> </button>
+                <button class="orderBtn" onclick="orderFood('Fish Fry')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></button>
+            </div>
+            <p>Likes: <span id="non2">0</span></p>
+        </div>
+        <div class="food-card">
+            <img src="images/mutton.jpeg" alt="Mutton Curry">
+            <h4>Mutton Curry</h4>
+            <div class="btn-group">
+                <button class="likeBtn" onclick="likeFood(this,'non3')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> </button>
+                <button class="orderBtn" onclick="orderFood('Mutton Curry')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></button>
+            </div>
+            <p>Likes: <span id="non3">0</span></p>
+        </div>
+        <div class="food-card">
+            <img src="https://images.unsplash.com/photo-1553621042-f6e147245754" alt="Grilled Prawns">
+            <h4>Grilled Prawns</h4>
+            <div class="btn-group">
+                <button class="likeBtn" onclick="likeFood(this,'non4')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart-icon lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"/></svg> </button>
+                <button class="orderBtn" onclick="orderFood('Grilled Prawns')"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shopping-cart-icon lucide-shopping-cart"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg></button>
+            </div>
+            <p>Likes: <span id="non4">0</span></p>
+        </div>
+    </div>
+
+    <button style="background:#dc3545;color:white;" onclick="logout()">Logout</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
