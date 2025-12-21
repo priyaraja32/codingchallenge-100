@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FutureTech Conference 2025</title>
+
+  <!-- Bootstrap -->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+
+
+       .hero {
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(120deg, #1d2671, #c33764);
+      color: white;
+       }
+
+
+.hero-image {
+  background: linear-gradient(120deg, #1d2671, #c33764);
+  padding: 30px;
+  border-radius: 20px;
+}
+
+.hero img {
+  max-width: 100%;
+  animation: float 4s ease-in-out infinite;
+  background-color: transparent;
+  border-radius: 30px;
+}
+
+
+    /* Feature cards */
+
+    .feature-card {
+      border-radius: 15px;
+      padding: 30px;
+      background: #ffffff;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transition: transform 0.3s;
+    }
+
+    .feature-card:hover {
+      transform: translateY(-8px);
+    }
+    
+/* Speakers */
+.speaker img {
+  width: 250px;      
+  height: 250px;      
+  object-fit: cover;   
+  border-radius: 15px;
+}
+
+
+    /* register */
+    .cta {
+      background: linear-gradient(120deg, #ff512f, #f09819);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+
+    footer {
+      background: #111;
+      color: #aaa;
+      padding: 20px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">FutureTechConference</a>
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div id="menu" class="collapse navbar-collapse">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+        <li class="nav-item"><a class="nav-link" href="#speakers">Speakers</a></li>
+        <li class="nav-item"><a class="nav-link" href="#register">Register</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6">
+        <h1 class="display-4 fw-bold">FutureTech Conference 2025</h1>
+        <p class="lead mt-3">
+          Discover the technologies shaping tomorrow — AI, Web3, Cloud & Cybersecurity.
+        </p>
+        <a href="#register" class="btn btn-lg btn-light mt-4">Get Your Pass</a>
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="images/cloud.jpeg" alt="Tech Illustration">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Features -->
+<section id="features" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-5">What You'll Experience</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card text-center">
+          <h4>🚀 Innovation</h4>
+          <p>Hands-on demos of next-gen technologies.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card text-center">
+          <h4>🤝 Networking</h4>
+          <p>Connect with founders, engineers & investors.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card text-center">
+          <h4>🎓 Learning</h4>
+          <p>Workshops led by global tech leaders.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Speakers -->
+<section id="speakers" class="py-5 bg-light">
+  <div class="container text-center">
+    <h2 class="mb-5">Meet the Speakers</h2>
+    <div class="row g-4">
+      <div class="col-md-4 speaker">
+        <img src="images/smith.jpeg" class="img-fluid mb-3">
+        <h5>Sarah Johnson</h5>
+        <p>AI Product Lead</p>
+      </div>
+      <div class="col-md-4 speaker">
+        <img src="images/john.jpeg" class="img-fluid mb-3">
+        <h5>Michael Chen</h5>
+        <p>Cloud Security Architect</p>
+      </div>
+      <div class="col-md-4 speaker">
+        <img src="images/jane.jpeg" class="img-fluid mb-3">
+        <h5>Emma Rodriguez</h5>
+        <p>Web3 Strategist</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- register -->
+<section id="register" class="cta">
+  <h2 class="mb-4">Ready to Join the Future?</h2>
+  <a href="#" class="btn btn-lg btn-light">Register Now</a>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>@2025 FutureTech Conference. All Rights Reserved.</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+
+
