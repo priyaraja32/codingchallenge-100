@@ -1,0 +1,89 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.menu-container {
+  width: 100%;
+  max-width: 600px;
+  text-align: center;
+}
+
+/*  button styling */
+.menu-toggle {
+  background-color: #333;
+  color: white;
+  padding: 12px 20px;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+/* Menu items */
+.menu-items {
+  display: none; 
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.menu-items a {
+  text-decoration: none;
+  padding: 10px;
+  background-color: #555;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background 0.2s;
+  display: block;
+}
+
+.menu-items a:hover {
+  background-color: #777;
+}
+
+/* Card container */
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+/* Card styling */
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.card h2 {
+  margin-top: 0;
+}
+
+/* Card colors for pages */
+
+.home .card { background-color: #e3f2fd; color: #0d47a1; }
+.about .card { background-color: #fff3e0; color: #e65100; }
+.services .card { background-color: #e8f5e9; color: #1b5e20; }
+.services ul { padding-left: 20px; }
+.contact .card { background-color: #fce4ec; color: #880e4f; }
+
+
+
+
+
