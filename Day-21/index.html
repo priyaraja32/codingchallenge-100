@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+
+    <!-- Lucide Icons -->
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.264.0/dist/lucide.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Icon -->
+    <div id="header-icon"></div>
+
+    <h1>Weather at Your Location</h1>
+
+    <!-- Weather Icons Row -->
+    <div class="icons-row">
+        <i data-lucide="sun"></i>
+        <i data-lucide="cloud"></i>
+        <i data-lucide="cloud-rain"></i>
+        <i data-lucide="cloud-snow"></i>
+        <i data-lucide="zap"></i>
+    </div>
+
+    <button onclick="getWeatherByLocation()">Get My Weather</button>
+
+    <h2 id="location"></h2>
+
+    <!-- Dynamic Weather Icon -->
+    <div id="icon"></div>
+
+    <p id="temperature"></p>
+    <p id="description"></p>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

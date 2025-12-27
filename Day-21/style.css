@@ -1,0 +1,98 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Body */
+body {
+    min-height: 100vh;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+    padding: 20px;
+}
+
+/* Header Icon */
+#header-icon svg {
+    width: 60px;
+    height: 60px;
+    stroke: #4facfe;
+    margin-bottom: 10px;
+}
+
+/* Title */
+h1 {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #222;
+}
+
+/* Icons Row */
+.icons-row {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.icons-row svg {
+    width: 30px;
+    height: 30px;
+    stroke: #4facfe;
+}
+
+/* Button */
+button {
+    padding: 12px 24px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #4facfe;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #2f80ed;
+}
+
+/* Weather Info */
+#location {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+#temperature {
+    font-size: 1.3rem;
+    margin: 5px 0;
+}
+
+#description {
+    font-size: 1.1rem;
+    margin: 5px 0;
+    color: #555;
+    text-transform: capitalize;
+}
+
+/* Dynamic Weather Icon */
+#icon svg {
+    width: 90px;
+    height: 90px;
+    stroke: #4facfe;
+    margin: 15px 0;
+}
+
+
+
+
+
+
+
