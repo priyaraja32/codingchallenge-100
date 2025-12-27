@@ -1,12 +1,5 @@
 const apiKey = '21522e2f4b5ad1c9e55779e001af7f28';
 
-// Header icon
-const headerIcon = lucide.createIcon('cloud-sun');
-document.getElementById('header-icon').appendChild(headerIcon);
-
-// Render static icons
-lucide.createIcons();
-
 async function getWeatherByLocation() {
     if (!navigator.geolocation) {
         alert('Geolocation not supported');
@@ -25,32 +18,33 @@ async function getWeatherByLocation() {
 
             document.getElementById('location').innerText =
                 `${data.name}, ${data.sys.country}`;
-            document.getElementById('temperature').innerText =
-                `Temperature: ${data.main.temp}°C`;
-            document.getElementById('description').innerText =
-                data.weather[0].description;
 
+            document.getElementById('temperature').innerText =
+                `${data.main.temp}°C`;
+
+            // Weather description as ICON only
             const weatherId = data.weather[0].id;
             let iconName = 'sun';
 
-            if (weatherId >= 200 && weatherId < 300) iconName = 'zap';
-            else if (weatherId >= 300 && weatherId < 600) iconName = 'cloud-rain';
-            else if (weatherId >= 600 && weatherId < 700) iconName = 'cloud-snow';
-            else if (weatherId >= 700 && weatherId < 800) iconName = 'cloud-fog';
-            else if (weatherId === 800) iconName = 'sun';
-            else if (weatherId > 800) iconName = 'cloud';
+            if (weatherId >= 200 && weatherId < 300) iconName = 'zap';            // Thunderstorm
+            else if (weatherId >= 300 && weatherId < 600) iconName = 'cloud-rain'; // Rain
+            else if (weatherId >= 600 && weatherId < 700) iconName = 'cloud-snow'; // Snow
+            else if (weatherId >= 700 && weatherId < 800) iconName = 'cloud-fog';  // Fog
+            else if (weatherId === 800) iconName = 'sun';                          // Clear
+            else if (weatherId > 800) iconName = 'cloud';                          // Cloudy
 
             const iconContainer = document.getElementById('icon');
             iconContainer.innerHTML = '';
 
-            const weatherIcon = lucide.createIcon(iconName);
-            iconContainer.appendChild(weatherIcon);
+            const icon = lucide.createIcon(iconName);
+            iconContainer.appendChild(icon);
 
         } catch (error) {
-            alert('Error fetching weather data');
+            alert('Error fetching weather');
         }
     });
 }
+
 
 
 
