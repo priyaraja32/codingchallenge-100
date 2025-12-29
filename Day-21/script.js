@@ -26,12 +26,12 @@ async function getWeatherByLocation() {
             const weatherId = data.weather[0].id;
             let iconName = 'sun';
 
-            if (weatherId >= 200 && weatherId < 300) iconName = 'zap';            // Thunderstorm
-            else if (weatherId >= 300 && weatherId < 600) iconName = 'cloud-rain'; // Rain
-            else if (weatherId >= 600 && weatherId < 700) iconName = 'cloud-snow'; // Snow
-            else if (weatherId >= 700 && weatherId < 800) iconName = 'cloud-fog';  // Fog
-            else if (weatherId === 800) iconName = 'sun';                          // Clear
-            else if (weatherId > 800) iconName = 'cloud';                          // Cloudy
+            if (weatherId >= 200 && weatherId < 300) iconName = 'zap';            
+            else if (weatherId >= 300 && weatherId < 600) iconName = 'cloud-rain'; 
+            else if (weatherId >= 600 && weatherId < 700) iconName = 'cloud-snow'; 
+            else if (weatherId >= 700 && weatherId < 800) iconName = 'cloud-fog';  
+            else if (weatherId === 800) iconName = 'sun';                          
+            else if (weatherId > 800) iconName = 'cloud';                          
 
             const iconContainer = document.getElementById('icon');
             iconContainer.innerHTML = '';
