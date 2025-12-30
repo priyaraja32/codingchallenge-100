@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Current News App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-newspaper-icon lucide-newspaper"><path d="M15 18h-5"/><path d="M18 14h-8"/><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-4 0v-9a2 2 0 0 1 2-2h2"/><rect width="8" height="4" x="10" y="6" rx="1"/></svg> Current News</h1>
+
+    <div class="tabs">
+      <button onclick="switchTab('in')">India News</button>
+      <button onclick="switchTab('global')">Global News</button>
+    </div>
+
+    <div class="controls">
+      <div class="search-box">
+        <input type="text" id="searchInput" placeholder="Search news..." />
+        <button onclick="handleSearch()">Search</button>
+      </div>
+     <button id="themeToggle">
+  <i data-lucide="moon"></i>
+  <span>Dark Mode</span>
+</button>
+
+<script src="https://unpkg.com/lucide@latest"></script>
+
+    </div>
+
+    <div class="categories">
+      <button onclick="handleCategory('general')">General</button>
+      <button onclick="handleCategory('business')">Business</button>
+      <button onclick="handleCategory('technology')">Tech</button>
+      <button onclick="handleCategory('sports')">Sports</button>
+      <button onclick="handleCategory('health')">Health</button>
+      <button onclick="handleCategory('science')">Science</button>
+      <button onclick="handleCategory('entertainment')">Entertainment</button>
+    </div>
+  </header>
+
+  <main id="newsContainer"></main>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
+
