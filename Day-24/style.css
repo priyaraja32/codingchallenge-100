@@ -1,0 +1,130 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+/* BACKGROUND */
+body {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #6366f1, #020617 60%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+/* WRAPPER */
+.contact-wrapper {
+  width: 100%;
+  max-width: 460px;
+}
+
+/* contact CARD */
+.contact-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(18px);
+  border-radius: 24px;
+  padding: 40px 36px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+  color: #ffffff;
+}
+
+/* HEADER */
+.header h1 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.header p {
+  font-size: 14px;
+  opacity: 0.85;
+  margin-bottom: 32px;
+}
+
+/* FORM */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+/* FIELD */
+.field {
+  position: relative;
+}
+
+.field input,
+.field textarea {
+  width: 100%;
+  padding: 16px 14px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 14px;
+  color: #ffffff;
+  font-size: 14px;
+  outline: none;
+}
+
+.field textarea {
+  min-height: 120px;
+  resize: none;
+}
+
+/* field label */
+.field label {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  pointer-events: none;
+  transition: all 0.3s ease;
+  background: transparent;
+}
+
+.field input:focus + label,
+.field textarea:focus + label,
+.field input:valid + label,
+.field textarea:valid + label {
+  top: -8px;
+  font-size: 11px;
+  background: #020617;
+  padding: 0 6px;
+  color: #a5b4fc;
+}
+
+/* BUTTON */
+button {
+  margin-top: 10px;
+  padding: 16px;
+  border-radius: 16px;
+  border: none;
+  background: linear-gradient(135deg, #6366f1, #22d3ee);
+  color: #020617;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 40px rgba(99, 102, 241, 0.5);
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .contact-card {
+    padding: 32px 24px;
+  }
+
+  .header h1 {
+    font-size: 26px;
+  }
+}
