@@ -1,27 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Notes CRUD App</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Noted Pad</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
-    <h1>CRUD-Notes App</h1>
-
-    <div class="form">
-      <input type="text" id="title" placeholder="Title">
-      <textarea id="content" placeholder="Content"></textarea>
-      <button id="saveBtn">Add Note</button>
+  <header class="topbar">
+    <div>
+      <h1>Note<span>Pad</span></h1>
+      <p>Your personal space to think, plan, and build.</p>
     </div>
+    <input type="text" id="search" placeholder="Search notes..." />
+  </header>
 
-    <h2>My Notes</h2>
-    <div id="notesList"></div>
-  </div>
+  <main class="layout">
+    <!-- Create Note -->
+    <section class="create-note">
+      <h2>Create a new idea</h2>
+      <input type="text" id="title" placeholder="Note title" />
+      <textarea id="content" placeholder="Write something meaningful..."></textarea>
+      <button id="saveBtn">Add Note</button>
+    </section>
+
+    <!-- Notes -->
+    <section class="notes-grid" id="notesList"></section>
+  </main>
 
   <script src="script.js"></script>
 </body>
 </html>
-
